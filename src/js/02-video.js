@@ -16,10 +16,10 @@ player
   });
 const onPlay = function () {
   player.getCurrentTime().then(function (seconds) {
-    localStorage.setItem('videoplayer-current-time', Math.round(seconds));
+    localStorage.setItem('videoPlayer-current-time', Math.round(seconds));
   });
 };
-let currentTime = localStorage.getItem('videoplayer-current-time');
+let currentTime = localStorage.getItem('videoPlayer-current-time');
 player.on('timeupdate', throttle(onPlay, 1000));
 // player.setCurrentTime(currentTime);
 player
