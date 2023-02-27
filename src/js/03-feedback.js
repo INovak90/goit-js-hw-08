@@ -21,11 +21,12 @@ function onFormSubmit(e) {
 }
 const localStorageFormJSON = localStorage.getItem(STORAGE_KEY);
 const savedFormData = JSON.parse(localStorageFormJSON);
-
+if (localStorageFormJSON) {
+  formData = savedFormData;
+}
 if (localStorageFormJSON && savedFormData.email) {
   refs.inputEmail.value = savedFormData.email;
 }
 if (localStorageFormJSON && savedFormData.message) {
   refs.textarea.value = savedFormData.message;
 }
-formData = savedFormData;
